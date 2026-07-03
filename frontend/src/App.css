@@ -1,0 +1,293 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: #e8eaed;
+  background: #0f1117;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a1f35, #0f1117 55%);
+}
+
+a {
+  color: #8ab4ff;
+  text-decoration: none;
+}
+
+.page,
+.auth-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.header h1,
+.card h2 {
+  margin: 0 0 0.25rem;
+}
+
+.header p,
+.subtitle {
+  margin: 0;
+  color: #9aa0a6;
+}
+
+nav {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: #c4c7c5;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  background: #171923;
+  color: #e8eaed;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+}
+
+button,
+.button-link {
+  background: #5865f2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stat-card {
+  background: rgba(88, 101, 242, 0.12);
+  border: 1px solid rgba(88, 101, 242, 0.25);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.stat-card span {
+  display: block;
+  color: #9aa0a6;
+  font-size: 0.85rem;
+}
+
+.stat-card strong {
+  font-size: 1.5rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.badge-success {
+  background: rgba(59, 165, 93, 0.2);
+  color: #7ddea2;
+}
+
+.badge-pending,
+.badge-partial {
+  background: rgba(250, 166, 26, 0.2);
+  color: #ffcb6b;
+}
+
+.badge-failed {
+  background: rgba(237, 66, 69, 0.2);
+  color: #ff8a8c;
+}
+
+.error,
+.success,
+.empty {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.error {
+  background: rgba(237, 66, 69, 0.15);
+  color: #ff8a8c;
+}
+
+.success {
+  background: rgba(59, 165, 93, 0.15);
+  color: #7ddea2;
+}
+
+.empty {
+  color: #9aa0a6;
+}
+
+.help {
+  color: #9aa0a6;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+.field-hint {
+  font-size: 0.8rem;
+  color: #7a7f85;
+}
+
+.help code {
+  color: #8ab4ff;
+}
+
+.toast-container {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: min(420px, calc(100vw - 2rem));
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
+  animation: toast-in 0.2s ease-out;
+}
+
+.toast-success {
+  background: rgba(59, 165, 93, 0.95);
+  border-color: rgba(125, 222, 162, 0.4);
+  color: #ecfdf3;
+}
+
+.toast-error {
+  background: rgba(237, 66, 69, 0.95);
+  border-color: rgba(255, 138, 140, 0.4);
+  color: #fff5f5;
+}
+
+.toast-close {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+  min-width: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.toast-close:hover {
+  opacity: 1;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
