@@ -104,7 +104,7 @@ In your second Discord channel: **Edit Channel → Integrations → Webhooks →
 2. Create a [Neon](https://neon.tech) project and copy the connection string (use `postgresql+asyncpg://` prefix)
 3. Connect the repo to [Render](https://render.com) using `render.yaml`, or create a Web Service manually:
    - **Build:** see `render.yaml`
-   - **Start:** `cd backend && uv run uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+   - **Start:** `cd backend && .venv/bin/uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 4. Set all environment variables in Render
 5. Set Discord Interactions Endpoint URL to `https://<your-app>.onrender.com/api/discord/interactions`
 
