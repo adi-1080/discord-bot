@@ -6,11 +6,14 @@ services:
     buildCommand: >-
       curl -LsSf https://astral.sh/uv/install.sh | sh &&
       export PATH="$HOME/.local/bin:$PATH" &&
-      cd backend && uv sync --frozen --no-dev &&
+      cd backend &&
+      $HOME/.local/bin/uv sync --frozen --no-dev --python 3.12 &&
       cd ../frontend && npm ci && npm run build &&
       mkdir -p ../backend/static && cp -r dist/* ../backend/static/
-    startCommand: cd backend && uv run uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    startCommand: cd backend && $HOME/.local/bin/uv run uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
       - key: ENVIRONMENT
         value: production
       - key: DATABASE_URL
